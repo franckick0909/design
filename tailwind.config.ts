@@ -12,6 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+        'berkshire-swash': ['var(--font-berkshire-swash)'],
+        'pinyon-script': ['var(--font-pinyon-script)'],
+      },
+
     },
   },
   plugins: [],
