@@ -25,7 +25,7 @@ const CubertoButton: React.FC<CubertoButtonProps> = ({ text, hoverText, href, bg
         className={`absolute inset-0 rounded-full ${bg}`}
         initial={{ clipPath: 'ellipse(100% 0% at 50% 100%)' }}
         animate={{ clipPath: isHovered ? 'ellipse(150% 150% at 50% 100%)' : 'ellipse(0% 0% at 50% 100%)' }}
-        transition={{ type: "spring", stiffness: 100, damping: 20, restDelta: 0.001, mass: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20, restDelta: 0.001, mass: 0.5 }}
         style={{ originY: '100%' }}
       />
       <motion.span
