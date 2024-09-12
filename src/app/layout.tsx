@@ -2,15 +2,21 @@ import type { Metadata } from "next";
 import { Inter, Pinyon_Script, Berkshire_Swash } from "next/font/google";
 import "./globals.css";
 import ClientLayout from './clientLayout';
+import Nav from "./components/nav";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter'
+});
 const pinyon_script = Pinyon_Script({
    subsets: ['latin'],
    weight: ['400'],
+   variable: '--font-pinyon-script'
 });
 const berkshire_swash = Berkshire_Swash({
    subsets: ['latin'],
    weight: ['400'],
+   variable: '--font-berkshire-swash'
 });
 
 export const metadata: Metadata = {
@@ -21,8 +27,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className={`${inter.className} ${pinyon_script.className} ${berkshire_swash.className}`}>
+      <body className={`${inter.variable} ${pinyon_script.variable} ${berkshire_swash.variable}`}>
         <ClientLayout>
+          <Nav />
           {children}
         </ClientLayout>
       </body>

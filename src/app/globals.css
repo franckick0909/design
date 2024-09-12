@@ -28,8 +28,3 @@ body {
     text-wrap: balance;
   }
 }
-
-.interactive-text {
-  color: white;
-  mix-blend-mode: difference;
-}

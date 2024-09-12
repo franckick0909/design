@@ -23,8 +23,6 @@ export default function Hero() {
             staggerChildren={0.1}
           />
 
-          <TraitCurve />
-
           <motion.div
             className="flex justify-center gap-6 mt-12"
             initial={{ opacity: 0 }}

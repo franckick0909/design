@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        inter: ['var(--font-inter)'],
+        'inter': ['var(--font-inter)'],
         'berkshire-swash': ['var(--font-berkshire-swash)'],
         'pinyon-script': ['var(--font-pinyon-script)'],
       },
