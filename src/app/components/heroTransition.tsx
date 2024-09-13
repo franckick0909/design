@@ -47,7 +47,7 @@ export default function HeroTransition({ children }: { children: React.ReactNode
       
       <AnimatePresence>
         {stage < 1 && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="fixed inset-0 flex items-center justify-center z-50">
             <div className="relative w-full">
               <motion.div
                 key="redLine"

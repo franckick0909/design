@@ -61,11 +61,11 @@ export default function Nav() {
         type="button"
         aria-label="Menu"
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-5 right-5 z-50 p-2"
+        className="fixed top-5 right-5 z-[2000] p-2 mix-blend-difference"
       >
-        <div className={`w-8 h-0.5 bg-black mb-2 transition-all ${isOpen ? "rotate-45 translate-y-2.5" : ""}`}></div>
-        <div className={`w-8 h-0.5 bg-black mb-2 transition-all ${isOpen ? "opacity-0" : ""}`}></div>
-        <div className={`w-8 h-0.5 bg-black transition-all ${isOpen ? "-rotate-45 -translate-y-2.5" : ""}`}></div>
+        <div className={`w-8 h-0.5 bg-white mb-2 transition-all ${isOpen ? "rotate-45 translate-y-2.5" : ""}`}></div>
+        <div className={`w-8 h-0.5 bg-white mb-2 transition-all ${isOpen ? "opacity-0" : ""}`}></div>
+        <div className={`w-8 h-0.5 bg-white transition-all ${isOpen ? "-rotate-45 -translate-y-2.5" : ""}`}></div>
       </button>
 
       <motion.nav

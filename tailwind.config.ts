@@ -16,6 +16,10 @@ const config: Config = {
         'inter': ['var(--font-inter)'],
         'berkshire-swash': ['var(--font-berkshire-swash)'],
         'pinyon-script': ['var(--font-pinyon-script)'],
+        'metal': ['var(--font-metal)'],
+        'felipa': ['var(--font-felipa)'],
+        'luxurious-roman': ['var(--font-luxurious-roman)'],
+        'srisakdi': ['var(--font-srisakdi)'],
       },
 
     },
