@@ -1,7 +1,7 @@
 "use client";
 
 import HeroTransition from "../components/heroTransition";
-import AnimatedText from "../components/animatedText";
+import { AnimatedText } from "../components/animatedText";
 import CubertoButton from "../components/cubertoButton";
 import { motion } from "framer-motion";
 import StickyCursor from "../components/stickyCursor";
@@ -17,9 +17,13 @@ export default function Hero() {
           <AnimatedText
             text="Caleb Raney est un freelance designer & webflow developer"
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 text-center relative"
-            delay={2.2}
-            duration={0.7}
-            staggerChildren={0.2}
+            el="h1"
+            animation={{
+              hidden: { y: "100%", scale: 0.8 },
+              visible: { y: "0%", scale: 1 },
+            }}
+            delay={3}
+            duration={1}
           />
 
           <motion.div
