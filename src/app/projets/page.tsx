@@ -1,42 +1,105 @@
-import Link from 'next/link';
+"use client";
 
-const projects = [
-  { id: '01', name: 'Projet 1', link: '/projets/projet1' },
-  { id: '02', name: 'Projet 2', link: '/projets/projet2' },
-  { id: '03', name: 'Projet 3', link: '/projets/projet3' },
-  { id: '04', name: 'Projet 4', link: '/projets/projet4' },
-  { id: '05', name: 'Projet 5', link: '/projets/projet5' },
-];
+import Link from "next/link";
+import { projects } from "../data/data";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Projets() {
-    return (
-        <div id="projets" className="relative flex flex-col items-center justify-center min-h-screen w-full bg-zinc-200 px-4 py-16">
-            <h2 className="text-4xl font-bold mb-8">Projets Sélectionnés</h2>
-            <div className="w-full">
-                {projects.map((project) => (
-                    <Link href={project.link} key={project.id} className="group block border-b border-zinc-700 py-8 transition-all hover:pl-4">
-                        <div className="flex items-center justify-between max-w-7xl mx-auto">
-                            <div className="flex items-center">
-                                <div className="flex items-center justify-center">
-                                    <span className="text-8xl font-serif text-black">{project.id}</span>
-                                </div>
 
-                                <div className="">
-                                    <span className="text-6xl font-inter ml-20">{project.name}</span>
-                                </div>
-                                
+  return (
+    <section
+      id="projets"
+      className="relative flex flex-col items-center justify-center min-h-screen w-full bg-stone-200 py-16"
+    >
+      <h2 className="text-4xl font-bold mb-8">Projets Sélectionnés</h2>
+      <div className="w-full">
+        {projects.map((project) => (
+          <motion.div
+            key={project.id}
+            className="group relative border-b border-black cursor-pointer overflow-hidden bg-white"
+            whileHover="hover"
+          >
+            <motion.div
+              className="absolute inset-0 bg-stone-200"
+              variants={{
+                hover: { y: "100%" }
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            />
+            <div className="relative">
+              <Link href={project.link}>
+                <div className="flex items-center px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 mx-auto">
+                  <div className="relative flex items-center justify-between w-full">
+                    <div className="relative inline-flex items-center justify-center w-32 h-24 overflow-hidden">
+                      {project.id.split('').map((digit, index) => (
+                        <motion.span
+                          key={`top-${index}`}
+                          className="font-serif tracking-tighter text-8xl font-bold inline-block absolute leading-snug"
+                          style={{ left: `${index * 45}%` }}  // Ajusté le positionnement horizontal
+                          initial={{ y: "200%" }}
+                          animate={{ y: 0 }}
+                          transition={{ delay: index * 0.1, duration: 0.5 }}
+                          variants={{
+                            hover: { y: "-100%" }
+                          }}
+                        >
+                          {digit}
+                        </motion.span>
+                      ))}
+                      {project.id.split('').map((digit, index) => (
+                        <motion.span
+                          key={`bottom-${index}`}
+                          className="font-pinyon-script text-8xl font-bold inline-block absolute"
+                          style={{ left: `${index * 40}%` }}  // Ajusté le positionnement horizontal
+                          initial={{ y: "200%" }}
+                          variants={{
+                            hover: { y: 0 }
+                          }}
+                          transition={{ delay: index * 0.1, duration: 0.5 }}
+                        >
+                          {digit}
+                        </motion.span>
+                      ))}
+                    </div>
 
-                            </div>
-                            <span className="text-2xl transform group-hover:translate-x-2 transition-transform">→</span>
-                        </div>
-                    </Link>
-                ))}
+                    <div className="">
+                      <span className="text-6xl font-inter ml-20">
+                        {project.name}
+                      </span>
+                    </div>
+
+                    <div className="relative w-96 h-48 overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                  <motion.span
+                    className="text-2xl"
+                    variants={{
+                      hover: { x: 10 }
+                    }}
+                  >
+                    →
+                  </motion.span>
+                </div>
+              </Link>
             </div>
-            <div className="mt-12">
-                <Link href="/projets/tous" className="text-lg font-semibold hover:underline">
-                    Voir tous les projets →
-                </Link>
-            </div>
-        </div>
-    );
+          </motion.div>
+        ))}
+      </div>
+      <div className="mt-12">
+        <Link
+          href="/projets/tous"
+          className="text-lg font-semibold hover:underline"
+        >
+          Voir tous les projets →
+        </Link>
+      </div>
+    </section>
+  );
 }
