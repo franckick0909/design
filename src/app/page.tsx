@@ -1,6 +1,5 @@
-
 import Hero from "./hero/page";
-import Branding from "./data/branding/page";
+import Branding from "./pages/branding/page";
 import Projets from "./projets/page";
 
 export default function Home() {

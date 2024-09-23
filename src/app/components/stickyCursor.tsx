@@ -24,7 +24,7 @@ const StickyCursor: React.FC<StickyCursorProps> = ({ stickyElement }) => {
 
   const scale = useSpring(1, smoothOptions);
 
-  const cursorSize = useTransform(scale, [1, 2], [20, 150]);
+  const cursorSize = useTransform(scale, [1, 2], [20, 100]);
 
   const manageMouseMove = useCallback((e: MouseEvent) => {
     const { clientX, clientY } = e;
@@ -70,7 +70,7 @@ const StickyCursor: React.FC<StickyCursorProps> = ({ stickyElement }) => {
         width: cursorSize,
         height: cursorSize,
         borderRadius: '50%',
-        backgroundColor: isHovered ? '#af9' : '#ffffff',
+        backgroundColor: isHovered ? '#ffffff' : '#ffffff',
         mixBlendMode: 'difference',
         pointerEvents: 'none',
         zIndex: 9999,

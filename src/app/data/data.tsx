@@ -31,35 +31,195 @@ export const navLinks = [
   },
 ];
 
-export const projects = [
+export const dataProjects = [
   {
     id: "01",
     name: "Projet 1",
     link: "/projets/projet1",
-    image: "/projets/img1.jpg",
+    coverImage: "/projets/img2.webp",
+    description: "Description détaillée du projet 1. Expliquez ici les objectifs, les défis et les résultats du projet.",
+    images: [
+      {
+        src: "/projets/img1.jpg",
+        alt: "Vue d'ensemble du projet 1",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/projets/img2.webp",
+        alt: "Détail du design du projet 1",
+        width: 800,
+        height: 1200,
+      },
+      {
+        src: "/projets/img3.webp",
+        alt: "Interface utilisateur du projet 1",
+        width: 1200,
+        height: 800,
+      },
+    ],
+    subtitle: "Création d'une application web innovante",
+    stacks: ["React", "Next.js", "Tailwind CSS"],
+    clientName: "Entreprise Innovante SA",
+    projectDate: "Janvier 2023",
+    category: "Application Web",
+    github: "", 
   },
   {
     id: "02",
-    name: "Projet 2",
+    name: "ANGEL-TATTOO",
     link: "/projets/projet2",
-    image: "/projets/img2.webp",
+    site: "https://angel-tattoo.netlify.app",
+    coverImage: "/projets/img1.jpg",
+    description: "Le projet 2 est une refonte complète d'un site e-commerce, mettant l'accent sur l'expérience utilisateur et les performances.",
+    images: [
+      {
+        src: "/projets/img1.jpg",
+        alt: "Page d'accueil du site e-commerce",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/projets/img2.webp",
+        alt: "Page produit optimisée",
+        width: 800,
+        height: 1200,
+      },
+      {
+        src: "/projets/img3.webp",
+        alt: "Processus de paiement simplifié",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/projets/img4.webp",
+        alt: "Page produit optimisée",
+        width: 800,
+        height: 1200,
+      },
+      {
+        src: "/projets/img5.webp",
+        alt: "Processus de paiement simplifié",
+        width: 1400,
+        height: 800,
+      },
+      {
+        src: "/projets/img1.jpg",
+        alt: "Page d'accueil du site e-commerce",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/projets/img2.webp",
+        alt: "Page produit optimisée",
+        width: 1200,
+        height: 800,
+      },
+    ],
+    subtitle: "Refonte d'un site e-commerce performant",
+    stacks: ["Vue.js", "Node.js", "MongoDB"],
+    clientName: "E-Shop Express",
+    projectDate: "Mars 2023",
+    category: "E-commerce",
+    github: "", // Ajoutez cette ligne
   },
   {
     id: "03",
     name: "Projet 3",
     link: "/projets/projet3",
-    image: "/projets/img3.webp",
+    coverImage: "/projets/projet3-cover.jpg",
+    description: "Description détaillée du projet 3. Expliquez ici les objectifs, les défis et les résultats du projet.",
+    images: [
+      {
+        src: "/projets/projet3-img1.jpg",
+        alt: "Vue d'ensemble du projet 3",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/projets/projet3-img2.jpg",
+        alt: "Détail du design du projet 3",
+        width: 800,
+        height: 1200,
+      },
+      {
+        src: "/projets/projet3-img3.jpg",
+        alt: "Interface utilisateur du projet 3",
+        width: 1200,
+        height: 800,
+      },
+    ],
+    subtitle: "Intégration de nouvelles fonctionnalités",
+    stacks: ["React", "Next.js", "Tailwind CSS"],
+    clientName: "Entreprise Innovante SA",
+    projectDate: "Avril 2023",
+    category: "Application Web",
+    github: "", // Ajoutez cette ligne
   },
   {
     id: "04",
     name: "Projet 4",
     link: "/projets/projet4",
-    image: "/projets/img4.webp",
+    coverImage: "/projets/projet4-cover.jpg",
+    description: "Description détaillée du projet 4. Expliquez ici les objectifs, les défis et les résultats du projet.",
+    images: [
+      {
+        src: "/projets/projet4-img1.jpg",
+        alt: "Vue d'ensemble du projet 4",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/projets/projet4-img2.jpg",
+        alt: "Détail du design du projet 4",
+        width: 800,
+        height: 1200,
+      },
+      {
+        src: "/projets/projet4-img3.jpg",
+        alt: "Interface utilisateur du projet 4",
+        width: 1200,
+        height: 800,
+      },
+    ],
+    subtitle: "Amélioration de la sécurité du système",
+    stacks: ["React", "Next.js", "Tailwind CSS"],
+    clientName: "Entreprise Sécurisée SA",
+    projectDate: "Mai 2023",
+    category: "Application Web",
+    github: "", // Ajoutez cette ligne
   },
   {
     id: "05",
     name: "Projet 5",
     link: "/projets/projet5",
-    image: "/projets/img5.webp",
-  }
+    coverImage: "/projets/projet5-cover.jpg",
+    description: "Description détaillée du projet 5. Expliquez ici les objectifs, les défis et les résultats du projet.",
+    images: [
+      {
+        src: "/projets/projet5-img1.jpg",
+        alt: "Vue d'ensemble du projet 5",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/projets/projet5-img2.jpg",
+        alt: "Détail du design du projet 5",
+        width: 800,
+        height: 1200,
+      },
+      {
+        src: "/projets/projet5-img3.jpg",
+        alt: "Interface utilisateur du projet 5",
+        width: 1200,
+        height: 800,
+      },
+    ],
+    subtitle: "Intégration de nouvelles fonctionnalités",
+    stacks: ["React", "Next.js", "Tailwind CSS"],
+    clientName: "Entreprise Innovante SA",
+    projectDate: "Juin 2023",
+    category: "Application Web",
+    github: "", // Ajoutez cette ligne
+  },
 ];

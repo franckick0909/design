@@ -1,14 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import { projects } from "../data/data";
+import {
+  motion,
+  MotionValue,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
-import Digits from "../components/digits";
-import { useMotionValue, motion, useSpring, MotionValue } from "framer-motion";
+import Link from "next/link";
 import React, { useRef, useState } from "react";
+import Digits from "@/app/components/digits";
+import { dataProjects } from "@/app/data/data";
 
 export default function Projets() {
-
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
@@ -35,8 +40,8 @@ export default function Projets() {
       className="relative flex flex-col items-center justify-center min-h-screen w-full bg-stone-200 py-16"
     >
       <h2 className="text-4xl font-bold mb-8">Projets Sélectionnés</h2>
-      <div className="w-full z-10">
-        {projects.map((project) => (
+      <div className="relative w-full z-10">
+        {dataProjects.map((project) => (
           <motion.div
             key={project.id}
             className="group relative border-b border-black cursor-pointer overflow-hidden bg-white"
@@ -65,15 +70,16 @@ export default function Projets() {
                     </div>
 
                     <ImageProjets
-                      image={project.image}
+                      image={project.coverImage}
                       name={project.name}
                       isHovered={hoveredProject === project.id}
                       mouseX={mouseXSpring}
                       mouseY={mouseYSpring}
                     />
-
                   </div>
-                  <span className="text-5xl group-hover:-translate-x-6 transition-transform duration-500">→</span>
+                  <span className="text-5xl group-hover:-translate-x-6 transition-transform duration-500">
+                    →
+                  </span>
                 </div>
               </Link>
             </div>
@@ -92,40 +98,49 @@ export default function Projets() {
   );
 }
 
-const ImageProjets = ({image, name, isHovered, mouseX, mouseY}: {
-  image: string, 
-  name: string, 
-  isHovered: boolean,
-  mouseX: MotionValue<number>,
-  mouseY: MotionValue<number>
+const ImageProjets = ({
+  image,
+  name,
+  isHovered,
+  mouseX,
+  mouseY,
+}: {
+  image: string;
+  name: string;
+  isHovered: boolean;
+  mouseX: MotionValue<number>;
+  mouseY: MotionValue<number>;
 }) => {
+  const transformdX = useTransform(mouseX, [-0.5, 0.5], ["-10%", "10%"]);
+  const transformdY = useTransform(mouseY, [-0.5, 0.5], ["-10%", "10%"]);
   return (
-    <motion.div 
-      className="absolute right-0 top-0 w-[24vw] h-[18vh] rounded-full overflow-hidden z-50"
-      initial={{ scale: 0, x: 50, opacity: 0 }}
-      animate={{ scale: isHovered ? 1 : 0, x: isHovered ? 0 : 50, opacity: isHovered ? 1 : 0 }}
+    <motion.div
+      className="absolute right-0 top-0 w-[24vw] h-[18vh] rounded-full z-[400] overflow-hidden bg"
+      initial={{ scale: 1, x: 50, opacity: 0 }}
+      animate={{
+        scale: isHovered ? 1.2 : 0,
+        x: isHovered ? 0 : 50,
+        opacity: isHovered ? 1 : 0,
+      }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
+      style={{
+        x: transformdX,
+        y: transformdY,
+      }}
     >
       <motion.div
-        className="absolute w-[24vw] h-[18vh] rounded-full overflow-hidden"
+        className="relative w-full h-full rounded-full overflow-hidden"
         style={{
           top: "50%",
-          left: "50%",
-          x: mouseX,
-          y: mouseY,
-          translateX: "-50%",
           translateY: "-50%",
+          x: transformdX,
+          y: transformdY,
         }}
         initial={{ scale: 0 }}
         animate={{ scale: isHovered ? 1 : 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <Image 
-          src={image} 
-          alt={name} 
-          fill 
-          className="object-cover" 
-        />
+        <Image src={image} alt={name} fill className="object-cover" />
       </motion.div>
     </motion.div>
   );

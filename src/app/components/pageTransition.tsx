@@ -2,44 +2,35 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { usePathname } from 'next/navigation';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
-  const [showBlue, setShowBlue] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowBlue(false), 1000);
+    setIsTransitioning(true);
+    const timer = setTimeout(() => setIsTransitioning(false), 1000); // Ajustez la durée selon vos besoins
     return () => clearTimeout(timer);
-  }, []);
-
-  const curveAmount = 0; // Ajustez cette valeur pour plus ou moins de courbure
+  }, [pathname]);
 
   return (
-    <>
-      <AnimatePresence>
-        {showBlue && (
-          <motion.div
-            className="fixed inset-0 z-50 bg-blue-500"
-            initial={{ clipPath: `inset(100% 0 0 0)` }}
-            animate={{ clipPath: `inset(0 0 0 0)` }}
-            exit={{ 
-              clipPath: [
-                `inset(0 0 0 0)`,
-                `inset(0 0 ${100}% 0 round 0 0 ${curveAmount}% ${curveAmount}%)`,
-                `inset(0 0 100% 0)`
-              ]
-            }}
-            transition={{ 
+    <div className="relative overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={pathname}
+          initial={{ y: "100%" }}
+          animate={{ 
+            y: isTransitioning ? "0%" : "100%",
+            transition: {
               duration: 1,
               ease: [0.645, 0.045, 0.355, 1],
-              stiffness: 100,
-              damping: 10,
-              mass: 1,
-              restDelta: 0.001,
-            }}
-          />
-        )}
+            }
+          }}
+          className="fixed inset-0 z-[300] bg-black"
+        />
       </AnimatePresence>
       {children}
-    </>
+    </div>
   );
 }
