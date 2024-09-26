@@ -1,5 +1,6 @@
 import Hero from "./hero/page";
 import Branding from "./pages/branding/page";
+import Services from "./pages/branding/services/page";
 import Projets from "./projets/page";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Branding />
       <Projets />
+      <Services />
     </main>
   );
 }

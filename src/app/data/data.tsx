@@ -223,3 +223,22 @@ export const dataProjects = [
     github: "", // Ajoutez cette ligne
   },
 ];
+
+
+export const dataServices = [
+  {
+    id: "01",
+    title: "Image de marque",
+    description: "Je crée des systèmes d'identité cohérents pour votre marque ou votre événement. Cela implique des recherches et une stratégie afin de créer un langage visuel et un style de communication cohérents.",
+  },
+  {
+    id: "02",
+    title: "Conception de sites Web",
+    description: "Un site Web est un incontournable pour toute marque, il sera le lieu privilégié où les gens pourront en savoir plus sur ce que vous faites, donc un design qui s'engage dans sa narration change la donne.",
+  },
+  {
+    id: "03",
+    title: "Next.js",
+    description: "En utilisant Next.js, je suis en mesure de créer des sites Web visuellement attrayants, interactifs, adaptés aux mobiles, optimisés pour les moteurs de recherche et facilement modifiables afin qu'ils puissent évoluer avec vous.",
+  },
+];
