@@ -242,3 +242,50 @@ export const dataServices = [
     description: "En utilisant Next.js, je suis en mesure de créer des sites Web visuellement attrayants, interactifs, adaptés aux mobiles, optimisés pour les moteurs de recherche et facilement modifiables afin qu'ils puissent évoluer avec vous.",
   },
 ];
+
+
+export const accordionItems1 = [
+  {
+    title: 'Quels services proposez-vous ?',
+    content:
+      "Je propose des services de création de design, de développement de sites web sur mesure, et je m'occupe également du déploiement en production de votre site internet.",
+  },
+  {
+    title: 'Quel est votre approche pour concevoir un site web ?',
+    content:
+      "Je commence par écouter les besoins de votre marque et de vos clients, puis je crée un design qui répond à ces besoins. Je travaille également sur l'expérience utilisateur pour garantir que le site est facile à utiliser et à naviguer.",
+  },
+  {
+    title: 'Comment gérez-vous la maintenance de votre site web ?',
+    content:
+      'Je propose des services de maintenance de site web, y compris la mise à jour du contenu, la correction de bugs et la résolution de problèmes de performance.',
+  },
+  {
+    title: "Quel type de site web proposez-vous ?",
+    content:
+      "Je propose des sites web sur mesure, y compris des sites vitrines, des sites e-commerce, des sites de portfolio",
+  },
+]
+
+export const accordionItems2 = [
+  {
+    title: "Combien de temps faut-il pour développer un site web ?",
+    content:
+      "Le temps de développement d'un site web varie en fonction de la complexité du projet et des besoins spécifiques du client. Je travaille de manière agile pour garantir un développement rapide et efficace.",
+  },
+  {
+    title: "Quel est votre processus de développement de site web ?",
+    content:
+      "Je commence par écouter les besoins de votre marque et de vos clients, puis je crée un design qui répond à ces besoins. Je travaille également sur l'expérience utilisateur pour garantir que le site est facile à utiliser et à naviger.",
+  },
+  {
+    title: "Comment gérez-vous la maintenance de votre site web ?",
+    content:
+      "Je propose des services de maintenance de site web, y compris la mise à jour du contenu, la correction de bugs et la résolution de problèmes de performance.",
+  },
+  {
+    title: "Faites-vous le référencement naturel (SEO) ?",
+    content:
+      "Oui, je travaille sur l'optimisation pour les moteurs de recherche (SEO) pour garantir que votre site est visible et accessible aux gens.",
+  },
+]
