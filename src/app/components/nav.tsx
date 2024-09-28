@@ -55,13 +55,13 @@ export default function Nav() {
   };
 
   return (
-    <>
+    <div className="relative">
       <button 
         title="Menu"
         type="button"
         aria-label="Menu"
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-5 right-5 z-[2000] p-2 mix-blend-difference"
+        className="fixed top-5 right-5 z-[1000] p-2 mix-blend-difference"
       >
         <div className={`w-8 h-0.5 bg-white mb-2 transition-all ${isOpen ? "rotate-45 translate-y-2.5" : ""}`}></div>
         <div className={`w-8 h-0.5 bg-white mb-2 transition-all ${isOpen ? "opacity-0" : ""}`}></div>
@@ -72,7 +72,7 @@ export default function Nav() {
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        className="fixed top-0 right-0 h-full w-full xl:w-1/2 bg-neutral-100 z-40 flex flex-col justify-start items-start p-20 gap-6"
+        className="fixed top-0 right-0 h-full w-full xl:w-1/2 bg-neutral-100 z-50 flex flex-col justify-start items-start p-20 gap-6"
       >
         {navLinks.map((item, index) => (
           <motion.div
@@ -101,6 +101,6 @@ export default function Nav() {
           </div>
         </motion.div>
       </motion.nav>
-    </>
+    </div>
   );
 }

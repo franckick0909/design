@@ -1,15 +1,22 @@
+"use client";
+
+import { useState } from "react";
+import Loading from "./loading";
 import Hero from "./hero/page";
 import Branding from "./pages/branding/page";
-import Services from "./pages/branding/services/page";
 import Projets from "./projets/page";
+import Services from "./pages/branding/services/page";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <main className="relative flex flex-col items-center justify-center min-h-screen">
-      <Hero />
+    <>
+      {isLoading && <Loading onLoadingComplete={() => setIsLoading(false)} />}
+      {!isLoading && <Hero />}
       <Branding />
       <Projets />
       <Services />
-    </main>
+    </>
   );
 }
